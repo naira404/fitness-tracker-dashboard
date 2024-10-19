@@ -1,0 +1,491 @@
+<i class="fa-solid fa-circle-user"></i>// user 
+<i class="fa-solid fa-pen-to-square"></i>// edit profile
+   {/* {picMessage && (
+            <ErrorMessage variant="danger">{picMessage}</ErrorMessage>
+          )} */}
+          {/* <Form.Group controlId="pic">
+            <Form.Label>Change Profile Picture</Form.Label>
+            <Form.File
+              onChange={(e) => postDetails(e.target.files[0])}
+              id="custom-file"
+              type="image/png"
+              label="Upload Profile Picture"
+              custom
+            />
+          </Form.Group> */}
+          **********************************************************************************************************
+          // export default Activitytable 
+// import axios from 'axios';
+// import React, { useState, useEffect } from 'react';
+// import { useParams } from 'react-router-dom';
+// import EditIcon from '@mui/icons-material/Edit';
+// import CheckBoxIcon from '@mui/icons-material/CheckBox';
+// import './table.css';
+
+// function Activitytable() {
+//     const { id } = useParams();
+//     const [values, setValues] = useState({
+//         id: id,
+//         username: '',
+//         currantweight: '',
+//         targetedweight: '',
+//         workout: '',
+//         gender: '',
+//         age: '',
+//         height: "",
+//         dailySteps: "",
+//         dailyCalories: "",
+//         dailyhydrated: "",
+//         activity: []
+//     });
+//     const [editingRow, setEditingRow] = useState(null);
+//     const [editData, setEditData] = useState({});
+
+//     useEffect(() => {
+//         if (id) {
+//             axios.get(`http://localhost:5000/users/${id}`)
+//                 .then(res => {
+//                     setValues(res.data);
+//                 })
+//                 .catch(err => console.log(err));
+//         }
+//     }, [id]);
+
+//     const handleEditClick = (row) => {
+//         setEditingRow(row.id);
+//         setEditData(row);
+//     };
+
+//     const handleInputChange = (e) => {
+//         const { name, value } = e.target;
+//         setEditData({ ...editData, [name]: value });
+//     };
+
+//     const handleSave = async () => {
+//         try {
+//             await axios.put(`http://localhost:5000/activity/${editingRow}`, editData);
+//             const updatedActivities = values.activity.map(a =>
+//                 a.id === editingRow ? editData : a
+//             );
+//             setValues({ ...values, activity: updatedActivities });
+//             setEditingRow(null);
+//             setEditData({});
+//         } catch (error) {
+//             console.error("Error saving data:", error);
+//         }
+//     };
+
+//     return (
+//         <div>
+//             <table style={{ borderCollapse: 'collapse', whiteSpace: 'nowrap', marginTop: "2%" }}>
+//                 <thead>
+//                     <tr>
+//                         <th style={{ border: '1px none #ddd', padding: '5px', backgroundColor: '#f2f2f2', width: '10%' }}>Date</th>
+//                         <th style={{ border: '1px none #ddd', padding: '5px', backgroundColor: '#f2f2f2', width: '10%' }}>Activity</th>
+//                         <th style={{ border: '1px none #ddd', padding: '5px', backgroundColor: '#f2f2f2', width: '10%' }}>Duration</th>
+//                         <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '22%' }}>Burned Calories</th>
+//                         <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Calories Intake</th>
+//                         <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Water Intake</th>
+//                         <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Steps Count</th>
+//                         <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '5%' }}></th>
+//                     </tr>
+//                 </thead>
+//                 <tbody>
+//                     {values.activity.map(a => (
+//                         <tr key={a.id}>
+//                             <td style={{ border: '1px none #ddd', padding: '10px' }}>
+//                                 {editingRow === a.id ? (
+//                                     <input
+//                                         name="date"
+//                                         value={editData.date || ''}
+//                                         onChange={handleInputChange}
+//                                         style={{ width: '100%' }}
+//                                     />
+//                                 ) : (
+//                                     a.date
+//                                 )}
+//                             </td>
+//                             <td style={{ border: '1px none #ddd', padding: '10px' }}>
+//                                 {editingRow === a.id ? (
+//                                     <input
+//                                         name="activity"
+//                                         value={editData.activity || ''}
+//                                         onChange={handleInputChange}
+//                                         style={{ width: '100%' }}
+//                                     />
+//                                 ) : (
+//                                     a.activity
+//                                 )}
+//                             </td>
+//                             <td style={{ border: '1px none #ddd', padding: '10px' }}>
+//                                 {editingRow === a.id ? (
+//                                     <input
+//                                         name="duration"
+//                                         value={editData.duration || ''}
+//                                         onChange={handleInputChange}
+//                                         style={{ width: '100%' }}
+//                                     />
+//                                 ) : (
+//                                     a.duration
+//                                 )}
+//                             </td>
+//                             <td style={{ border: '1px none #ddd', padding: '10px' }}>
+//                                 {editingRow === a.id ? (
+//                                     <input
+//                                         name="burnedCalories"
+//                                         value={editData.burnedCalories || ''}
+//                                         onChange={handleInputChange}
+//                                         style={{ width: '100%' }}
+//                                     />
+//                                 ) : (
+//                                     a.burnedCalories
+//                                 )}
+//                             </td>
+//                             <td style={{ border: '1px none #ddd', padding: '10px' }}>
+//                                 {editingRow === a.id ? (
+//                                     <input
+//                                         name="caloriesIntake"
+//                                         value={editData.caloriesIntake || ''}
+//                                         onChange={handleInputChange}
+//                                         style={{ width: '100%' }}
+//                                     />
+//                                 ) : (
+//                                     a.caloriesIntake
+//                                 )}
+//                             </td>
+//                             <td style={{ border: '1px none #ddd', padding: '10px' }}>
+//                                 {editingRow === a.id ? (
+//                                     <input
+//                                         name="waterIntake"
+//                                         value={editData.waterIntake || ''}
+//                                         onChange={handleInputChange}
+//                                         style={{ width: '100%' }}
+//                                     />
+//                                 ) : (
+//                                     a.waterIntake
+//                                 )}
+//                             </td>
+//                             <td style={{ border: '1px none #ddd', padding: '10px' }}>
+//                                 {editingRow === a.id ? (
+//                                     <input
+//                                         name="stepsCount"
+//                                         value={editData.stepsCount || ''}
+//                                         onChange={handleInputChange}
+//                                         style={{ width: '100%' }}
+//                                     />
+//                                 ) : (
+//                                     a.stepsCount
+//                                 )}
+//                             </td>
+//                             <td style={{ border: '1px none #ddd', padding: '5px' }}>
+//                                 {editingRow === a.id ? (
+//                                     <CheckBoxIcon
+//                                         sx={{ fontSize: "25px", padding: "5px", cursor: "pointer", color: 'green' }}
+//                                         onClick={handleSave}
+//                                     />
+//                                 ) : (
+//                                     <EditIcon
+//                                         sx={{ fontSize: "25px", padding: "5px", cursor: "pointer" }}
+//                                         onClick={() => handleEditClick(a)}
+//                                     />
+//                                 )}
+//                             </td>
+//                         </tr>
+//                     ))}
+//                 </tbody>
+//             </table>
+//         </div>
+//     );
+// }
+
+// export default Activitytable;
+***********************************************************************************************************************
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import EditIcon from '@mui/icons-material/Edit';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import './table.css';
+
+function Activitytable() {
+    const { id } = useParams();
+    const [values, setValues] = useState({
+        id: id,
+        username: '',
+        currantweight: '',
+        targetedweight: '',
+        workout: '',
+        gender: '',
+        age: '',
+        height: "",
+        dailySteps: "",
+        dailyCalories: "",
+        dailyhydrated: "",
+        activity: []
+    });
+    const [editingRow, setEditingRow] = useState(null);
+    const [editData, setEditData] = useState({});
+
+    useEffect(() => {
+        if (id) {
+            axios.get(`http://localhost:5000/users/${id}`)
+                .then(res => {
+                    setValues(res.data);
+                })
+                .catch(err => console.log(err));
+        }
+    }, [id]);
+
+    const handleEditClick = (row) => {
+        setEditingRow(row.id);
+        setEditData(row);
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setEditData({ ...editData, [name]: value });
+    };
+
+    const handleSave = async () => {
+        try {
+            console.log("Saving data:", editData); 
+            const response = await axios.put(`http://localhost:5000/activity/${editingRow}`, editData);
+            console.log("Save response:", response.data); 
+
+            
+            const updatedActivities = values.activity.map(a =>
+                a.id === editingRow ? editData : a
+            );
+            setValues({ ...values, activity: updatedActivities });
+            setEditingRow(null);
+            setEditData({});
+        } catch (error) {
+            console.error("Error saving data:", error); 
+        }
+    };
+
+    return (
+        <div>
+            <table style={{ borderCollapse: 'collapse', whiteSpace: 'nowrap', marginTop: "2%" }}>
+                <thead>
+                    <tr>
+                        <th style={{ border: '1px none #ddd', padding: '5px', backgroundColor: '#f2f2f2', width: '10%' }}>Date</th>
+                        <th style={{ border: '1px none #ddd', padding: '5px', backgroundColor: '#f2f2f2', width: '10%' }}>Activity</th>
+                        <th style={{ border: '1px none #ddd', padding: '5px', backgroundColor: '#f2f2f2', width: '10%' }}>Duration</th>
+                        <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '22%' }}>Burned Calories</th>
+                        <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Calories Intake</th>
+                        <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Water Intake</th>
+                        <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Steps Count</th>
+                        <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '5%' }}></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {values.activity.map(a => (
+                        <tr key={a.id}>
+                            <td style={{ border: '1px none #ddd', padding: '10px' }}>
+                                {editingRow === a.id ? (
+                                    <input
+                                        name="date"
+                                        value={editData.date || ''}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%' }}
+                                    />
+                                ) : (
+                                    a.date
+                                )}
+                            </td>
+                            <td style={{ border: '1px none #ddd', padding: '10px' }}>
+                                {editingRow === a.id ? (
+                                    <input
+                                        name="activity"
+                                        value={editData.activity || ''}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%' }}
+                                    />
+                                ) : (
+                                    a.activity
+                                )}
+                            </td>
+                            <td style={{ border: '1px none #ddd', padding: '10px' }}>
+                                {editingRow === a.id ? (
+                                    <input
+                                        name="duration"
+                                        value={editData.duration || ''}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%' }}
+                                    />
+                                ) : (
+                                    a.duration
+                                )}
+                            </td>
+                            <td style={{ border: '1px none #ddd', padding: '10px' }}>
+                                {editingRow === a.id ? (
+                                    <input
+                                        name="burnedCalories"
+                                        value={editData.burnedCalories || ''}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%' }}
+                                    />
+                                ) : (
+                                    a.burnedCalories
+                                )}
+                            </td>
+                            <td style={{ border: '1px none #ddd', padding: '10px' }}>
+                                {editingRow === a.id ? (
+                                    <input
+                                        name="caloriesIntake"
+                                        value={editData.caloriesIntake || ''}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%' }}
+                                    />
+                                ) : (
+                                    a.caloriesIntake
+                                )}
+                            </td>
+                            <td style={{ border: '1px none #ddd', padding: '10px' }}>
+                                {editingRow === a.id ? (
+                                    <input
+                                        name="waterIntake"
+                                        value={editData.waterIntake || ''}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%' }}
+                                    />
+                                ) : (
+                                    a.waterIntake
+                                )}
+                            </td>
+                            <td style={{ border: '1px none #ddd', padding: '10px' }}>
+                                {editingRow === a.id ? (
+                                    <input
+                                        name="stepsCount"
+                                        value={editData.stepsCount || ''}
+                                        onChange={handleInputChange}
+                                        style={{ width: '100%' }}
+                                    />
+                                ) : (
+                                    a.stepsCount
+                                )}
+                            </td>
+                            <td style={{ border: '1px none #ddd', padding: '5px' }}>
+                                {editingRow === a.id ? (
+                                    <CheckBoxIcon
+                                        sx={{ fontSize: "25px", padding: "5px", cursor: "pointer", color: 'green' }}
+                                        onClick={handleSave}
+                                    />
+                                ) : (
+                                    <EditIcon
+                                        sx={{ fontSize: "25px", padding: "5px", cursor: "pointer" }}
+                                        onClick={() => handleEditClick(a)}
+                                    />
+                                )}
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    );
+}
+
+export default Activitytable;
+/***********************************************************************************************/
+// import axios from 'axios'
+// import React, { useState } from 'react'
+// import { useEffect } from 'react'
+// import { useParams } from 'react-router-dom'
+// import EditIcon from '@mui/icons-material/Edit';
+// import CheckBoxIcon from '@mui/icons-material/CheckBox';
+// import { green, grey } from '@mui/material/colors';
+// import './table.css'
+
+// function Activitytable() {
+
+
+
+//   const { id } = useParams();
+//   const [values, setValues] = useState({
+//     id: id,
+//     username: '',
+//     currantweight: '',
+//     targetedweight: '',
+//     workout: '',
+//     gender: '',
+//     age: '',
+//     height: "",
+//     dailySteps: "",
+//     dailyCalories: "",
+//     dailyhydrated: "",
+//     activity: [{
+//       activity: "",
+//       duration: "",
+//       burnedCalories: '',
+//       caloriesIntake: "",
+//       waterIntake: "",
+//       stepsCount: "",
+//       date: ''
+//     }]
+
+//   })
+//   // const [isChecked, setIsChecked] = useState(true);
+//   // const handleCheckBoxClick=()=>{
+//   //     setIsChecked(prev => !prev);
+
+//   // }
+//   useEffect(() => {
+//     console.log('ID from params:', id);
+
+//     if (id) {
+//       axios.get(`http://localhost:5000/users/${id}`)
+//         .then(res => {
+//           console.log(res)
+//           setValues(res.data)
+//         })
+//         .catch(err => console.log(err));
+//     } else {
+//       console.error("ID is not defined");
+//     }
+//   }, [id]);
+//   return (
+//     <div> <table style={{ borderCollapse: 'collapse', whiteSpace: 'nowrap', marginTop: "2%" }}>
+//       <thead>
+//         <tr>
+//           <th style={{ border: '1px none #ddd', padding: '5x', backgroundColor: '#f2f2f2', width: '10%' }}>Date</th>
+//           <th style={{ border: '1px none #ddd', padding: '5px', backgroundColor: '#f2f2f2', width: '10%' }}>Activity</th>
+//           <th style={{ border: '1px none #ddd', padding: '5px', backgroundColor: '#f2f2f2', width: '10%' }}>Duration</th>
+//           <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '22%' }}>Burned Calories</th>
+//           <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Calories Intake</th>
+//           <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Water Intake</th>
+//           <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '20%' }}>Steps Count</th>
+//           <th style={{ border: '1px none #ddd', padding: '10px', backgroundColor: '#f2f2f2', width: '5%' }}></th>
+//         </tr>
+//       </thead>
+//       <tbody>
+//         {values.activity.map(a => (
+//           <tr key={a.id}>
+//             <td style={{ border: '1px none #ddd', padding: '10px' }} >{a.date}</td>
+//             <td style={{ border: '1px none #ddd', padding: '10px' }}>{a.activity}</td>
+//             <td style={{ border: '1px none #ddd', padding: '10px' }}>{a.duration}</td>
+//             <td style={{ border: '1px none #ddd', padding: '10px' }}>{a.burnedCalories}</td>
+//             <td style={{ border: '1px none #ddd', padding: '10px' }} >{a.caloriesIntake}</td>
+//             <td style={{ border: '1px none #ddd', padding: '10px' }}>{a.waterIntake}</td>
+//             <td style={{ border: '1px none #ddd', padding: '10px' }}>{a.stepsCount}</td>
+
+//             <td style={{ border: '1px none #ddd', padding: '5px' }}>
+//               <EditIcon
+//                 sx={{ fontSize: "25px", padding: "5px", cursor: "pointer" }}
+//               // onClick={handleEditClick} 
+//               />
+//             </td>
+//           </tr>
+//         ))}
+//       </tbody>
+//     </table>
+//     </div>
+//   )
+
+
+
+// }
+// export default Activitytable 
+//////////////////////////////////////////////////////////////////////////////////////
+

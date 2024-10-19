@@ -1,0 +1,229 @@
+
+       
+{
+    "users": [
+      {
+        "id": "1",
+        "username": "sara emad",
+        "email": "sara@gmail.com",
+        "currantweight": "65",
+        "targetedweight": "55",
+        "workout": "100",
+        "dailyhydrated": "40%",
+        "age": "23",
+        "password": "12345",
+        "dailySteps": "",
+        "dailyCalories": "",
+        "dailyCaloriesBurned": "",
+        "height": "159",
+        "gender": " female",
+        "activity": [
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7"
+          },
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7"
+          },
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7"
+          },
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "username": "berry",
+        "email": "berry@gmail.com",
+        "currantweight": "50",
+        "targetedweight": "55",
+        "workout": "90",
+        "dailyhydrated": "60%",
+        "age": "21",
+        "password": "12341",
+        "dailySteps": "",
+        "dailyCalories": "",
+        "dailyCaloriesBurned": "",
+        "height": "155",
+        "gender": " female ",
+        "activity": [
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "username": "imegre",
+        "email": "hager@gmail.com",
+        "currantweight": "69",
+        "targetedweight": "55",
+        "workout": "100",
+        "dailyhydrated": "50%",
+        "age": "25",
+        "password": "12349",
+        "dailySteps": "",
+        "dailyCalories": "",
+        "dailyCaloriesBurned": "",
+        "height": "159",
+        "gender": " female ",
+        "activity": [
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "username": "Basmalla Mahmoud",
+        "email": "basmala@gmail.com",
+        "currantweight": "65",
+        "targetedweight": "50",
+        "workout": "16",
+        "dailyhydrated": "70%",
+        "age": "22",
+        "password": "12348",
+        "dailySteps": "",
+        "dailyCalories": "56",
+        "dailyCaloriesBurned": "56",
+        "height": "170",
+        "gender": "female ",
+        "activity": [
+          {
+            "id": "1",
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": "344",
+            "caloriesIntake": 1700,
+            "waterIntake(l)": 1.5,
+            "stepsCount": 5000,
+            "date": "8/10",
+            "waterIntake": "1.9"
+          },
+          {
+            "id": "2",
+            "activity": "Running",
+            "duration": "90 minutes",
+            "burnedCalories": 300,
+            "caloriesIntake": "1900",
+            "waterIntake": "1.7",
+            "stepsCount": 5000,
+            "date": "4/10"
+          },
+          {
+            "id": "3",
+            "activity": "Running",
+            "duration": "90 minutes",
+            "burnedCalories": "257",
+            "caloriesIntake": "1600",
+            "waterIntake": "1",
+            "stepsCount": 5000,
+            "date": "2/10"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "username": "farah",
+        "email": "farah@gmail.com",
+        "currantweight": "35",
+        "targetedweight": "55",
+        "workout": "90",
+        "dailyhydrated": "70%",
+        "age": "18",
+        "password": "12347",
+        "dailySteps": "",
+        "dailyCalories": "300",
+        "height": "155",
+        "gender": " female ",
+        "activity": [
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7",
+            "caloriesIntake": "1600",
+            "waterIntake": "1.7"
+          }
+        ],
+        "dailyCaloriesBurned": "250"
+      },
+      {
+        "id": "6",
+        "username": "ali",
+        "email": "ali@gmail.com",
+        "currantweight": "77",
+        "targetedweight": "65",
+        "workout": "100",
+        "dailyhydrated": "30%",
+        "age": "19",
+        "password": "12344",
+        "dailySteps": "",
+        "dailyCalories": "",
+        "height": "188",
+        "gender": " female ",
+        "activity": [
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "username": "maged jakson",
+        "email": "maged@gmail.com",
+        "currantweight": "97",
+        "targetedweight": "8",
+        "workout": "100",
+        "dailyhydrated": "40%",
+        "age": "29",
+        "password": "12346",
+        "dailySteps": "",
+        "dailyCalories": "",
+        "height": "178",
+        "gender": " female ",
+        "activities": [
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7",
+            "caloriesIntake": "2500",
+            "waterIntake": "2.6",
+            "stepsCount":"13400"
+          },
+          {
+            "activity": "Running",
+            "duration": "30 minutes",
+            "burnedCalories": 300,
+            "date": "21/7",
+            "caloriesIntake": "1600",
+            "waterIntake": "1.7",
+            "stepsCount":"5000"
+          }
+        ]
+      }
+    ]
+  }

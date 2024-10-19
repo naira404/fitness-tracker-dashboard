@@ -1,0 +1,20 @@
+.nav{
+    background-color: #b49ef4;;
+    height: 5px;
+    padding: 15px;
+    display: flex;
+    
+}
+.nav a{
+    text-decoration: none;
+    font-size: xx-large;
+    padding-bottom: 4px;
+
+
+}
+.nav .links{
+    padding-left: 40px;
+    margin-left: 80%;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+}

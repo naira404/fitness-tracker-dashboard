@@ -1,0 +1,58 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    padding-left: 2%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+thead tr{
+    font: 1.3em sans-serif;
+    color:#f2ecf2
+}
+thead {
+    background-color: #d782e2;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+tbody tr{
+    font: 1.2em sans-serif;
+    
+}
+ tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Input field styling */
+input {
+    width: 90%;
+    padding: 5px;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button icon styling */
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
